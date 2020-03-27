@@ -91,13 +91,15 @@ class handle:
 def requestbot():
         text = requests.get(url).text
         soup = BeautifulSoup(text, 'html.parser')
-        todos = soup.find_all('div', class_='maincounter-number')
-        infectados = todos[0].text.replace(',', '').strip()
-        fallecidos = todos[1].text.replace(',', '').strip()
-        recuperados = todos[2].text.replace(',', '').strip()
+        all = soup.find_all('div', class_='maincounter-number')
+        infected = all[0].text.replace(',', '').strip()
+        deaths = all[1].text.replace(',', '').strip()
+        recovered = all[2].text.replace(',', '').strip()
+        
+        active = int(infected) - int(deaths) - int(recovered)
 
 
-        return f'[Total] Infected {infectados} | Deaths {fallecidos} | Recovered {recuperados}'
+        return f'[Total] Active {active} | Deaths {deaths} | Recovered {recovered}'
 
 
 def request(pais):
