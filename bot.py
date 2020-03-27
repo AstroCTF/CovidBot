@@ -231,7 +231,6 @@ def graph(custom=None):
     for c,d in zip(x,y):
             plt.text(c, d + 6000, str(d), rotation=90, horizontalalignment="center")
     
-    plt.show()    
     plt.savefig(f'img/day/{months[datetime.now().month - 1][0]}{datetime.now().day - 1}.png', bbox_inches='tight')
 
 
