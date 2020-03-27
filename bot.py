@@ -128,7 +128,7 @@ def request(pais):
 ##---------------------------> MAIN FUNCTION <---------------------------##
 
 def channel():
-        last_new = 'https://www.bbc.co.uk/news/world-europe-51918596'
+        last_new = ''
         cases = 0
         last_cases = 0
         while True:
