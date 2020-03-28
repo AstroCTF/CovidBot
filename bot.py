@@ -141,7 +141,7 @@ def channel():
                 if datetime.now().minute < 2:
                         output = requestbot()
                         send_message(output , channel_id)
-                        #api.update_status(output + '\n\n#CORONAVIRUS #NEWS #COVID19')
+                        api.update_status(output + '\n\n#CORONAVIRUS #NEWS #COVID19')
                         if last_cases == 0:
                                 last_cases = int(requestbot().split()[2])
                         else:
